@@ -1,0 +1,35 @@
+
+Propagation of diseases through the population, fake news through social networks, or even failures through distributed networks: These are some examples of irreversible conversion processes, which simulate the dissemination of a certain characteristic in a subset of the vertices in a graph, that in turn pass such characteristic on to the others vertices, and so on. 
+This problem has already been studied under various names in various areas of computer science, being versatile and applicable to the most varied fields.
+
+Given that each vertex in this graph has a resistance to infection, we will be mainly interested in the problem of minimum convergent set, or target set selection, which aims to find the minimum subset of vertices of a graph, such that if the vertices of the set are initially infected, then they will carry on the infection to all other vertices. The decision version of this problem with the most simple spreading rule was shown to be NP-complete in \cite{dreyer2009}.
+
+In the literature, we have few integer models that attempt to solve exactly this problem, and based on this we believe that much can be contributed to the area by providing other formulations for this problem.  
+
+%<insert here summary of next chapters>
+%<make better introduction when finish text>
+
+\section{Motivation}
+Irreversible conversion processes are widely studied in the most diverse areas, and have the most varied practical applications. As we see in \cite{kutten1999}, as communication networks grow, existing fault-handling tools that involve time measurements, such as global wait times or resetting procedures, become increasingly inaccessible, since its cost grows with the size of the network. Therefore, for a fault-handling mechanism to scale to large networks, its cost now depends only on the number of failed nodes. Finding the minimum number of vertices that leads to the compromise of the network as a whole is one of the applications of the problem studied here.
+
+In addition, different processes with economic and social implications can be modeled as irreversible conversion processes. Given a graph that models the social interaction between individuals, it can be said that the behavior of each individual is influenced by their direct neighbors. Many companies are interested in the minimal group of individuals who most influence a social network in order to focus resources and efforts to efficiently market their products.
+
+Another way in which we encounter this problem is in the process of disseminating ideas and opinions in a group of people. \citeauthor{dreyer2009} give the example of finding the most influential subgroup in the group, that is, the set of individuals who, if they agree with an opinion or idea at the beginning of the process, guarantee that the group will eventually also agree. Finding the smallest group of these individuals can have both social applications in public awareness campaigns for example as well as economic ones, helping companies to modify or influence the consumer's view of their brand (rebrand).
+
+These are just some of the applications of irreversible conversion processes that show how modeling and solving this problem has great economic and social value.
+
+
+\section{Goals/Overview}
+
+%Because it is an NP-complete problem, we will approach the problem with integer programming, using a simple direct integer model as a starting point. We want to find improvements, or even an alternative and more efficient way to represent the problem, and we can use models based on different interpretations from those proposed here. In addition, the starting entire model can be greatly improved by inequalities and lower boundaries that reduce the solution space. Taking this into account, it is important to study problem-specific structures. It is important to focus on this part of the problem solving, because for some very important graph classes the problem cannot be solved in a timely manner.
+
+%Study the best heuristics that can help solving our problem for helping branch-and-cut approaches, since relying on exact solutions provided by the solvers can be extremely inefficient. 
+Breafly, our mail goals in this dissertation was to:
+\begin{itemize}
+\item Review the literature regarding the Target Set Selection Problem and gather all current relevant results for this problems, which is challenging, since this problem appears under many different names, depending on the area it was being studied;
+\item Describe current integer formulations in the literature that will be relevant to our work with more detail, as well as a starting very simple model, build directly from the problem definition;
+\item Describe the new paradigm used to define our integer model, proving the core properties we use in our formulation; 
+\item Show the branch and cut algorithm created, but consequently show its limitations when proving the separation problem to be NP-complete; 
+\item Since our separation problem is so difficult, study which strategies can be tried in order to execute our branch-and-cut algorithm in timely manner. 
+\item Present experimental results that compare our new model to the formulations in the literature.
+\end{itemize}

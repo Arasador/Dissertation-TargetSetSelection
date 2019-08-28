@@ -1,0 +1,136 @@
+\documentclass[msc]{ppgccufmg}    % ou [msc] para dissertações
+                                  % de mestrado. Para propostas ou
+                                  % projetos, usar [phd,project],
+                                  % [msc,proposal], etc.
+
+%\usepackage[brazil]{babel}        % se o documento for em português, OU
+\usepackage[english]{babel}      % se o documento for em inglês
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{type1ec}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage[export]{adjustbox}
+\usetikzlibrary{arrows.meta}
+\usepackage[
+  portuguese,
+  bookmarks=true,
+  bookmarksnumbered=true,
+  linktocpage,
+  colorlinks,
+  citecolor=black,
+  urlcolor=black,
+  linkcolor=black,
+  filecolor=black,
+  ]{hyperref}
+\usepackage[square]{natbib}
+\bibliographystyle{unsrtnat}
+\usepackage{url}
+\usepackage{indentfirst}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{myprop}{Proposition}
+\newtheorem{myred}{Reduction}
+\newtheorem{mylemma}{Lemma}
+\newtheorem{mytheo}{Theorem}
+\newtheorem{myproof}{Proof}
+
+
+
+\begin{document}
+\ppgccufmg{
+  title={Integer Formulation for Target Set Selection },
+  authorrev={Rasador Panizzi, Alana},
+  cutter={D1234p},
+  cdu={519.6*82.10},
+  university={Universidade Federal de Minas Gerais},
+  course={Computer Science},
+  address={Belo Horizonte},
+  date={2019-09},
+  keywords={Graphs, Networks, Spread Infection, Dynamic Monopolies, Influence Spreading, Spread of Information,Viral  Marketing},
+  advisor={Sebasti\'an Alberto Urrutia\\ Vin\'icius Fernandes dos Santos},
+%  approval={img/approvalsheet.eps},
+%  approval=[-2.5cm][1]{aprovalsheet},
+%  abstract={Resumo}{resumo},
+ % abstract=[english]{Abstract}{extra/Abstract},
+%  abstract={Resumo Estendido}{resumoest},
+% dedication={extra/Dedication},
+%  ack={agradecimentos},
+% ack=[Acknowledgments]{extra/Acknowledgments},
+epigraphtext={But I've never seen the Icarus story as a lesson about the limitations of humans. I see it as a lesson about the limitations of wax as an adhesive.}{Randall Munroe},
+ %indexkeys={1. Computer Science}
+  }
+  
+  \chapter{Introduction}
+\input{chapter/Introduction.tex}
+
+\chapter{Literature review}
+\input{chapter/LiteratureReview.tex}
+\begin{itemize}
+\item Add images from presentation and organize as story
+\end{itemize}
+
+%Convex hull for P3  https://www.sciencedirect.com/science/article/pii/S1571065313002333
+% parametrized stuff
+%  * http://www.akt.tu-berlin.de/fileadmin/fg34/publications-akt/tss-long.pdf
+%  * https://arxiv.org/pdf/1610.07530.pdf
+
+% model with no results: https://link.springer.com/content/pdf/10.1007/s10878-018-0256-z.pdf
+%model to maximize number of infected at the end: http://journals.tubitak.gov.tr/elektrik/issues/elk-18-26-6/elk-26-6-46-1802-212.pdf
+
+% paper to beat. Has instances and concrete model. https://link.springer.com/content/pdf/10.1007/s10479-018-3107-5.pdf \cite{Soltani2019}
+
+% M campelo work https://sol.sbc.org.br/index.php/etc/article/view/3176/3138
+
+%Solução grande??????? Pedir vinicius  https://www.sciencedirect.com/science/article/pii/S1571065313002485#!
+
+\chapter{Problem Formulations}
+\input{chapter/ProblemFormulations.tex}
+\begin{itemize}
+    \item Add figures: Model direct edges. Model with facet cutting inequalities 
+    \item Maybe add detailed explanation from paper about constraints introduced in \cite{Soltani2019}
+\end{itemize}
+
+\chapter{Our Integer Model}
+\input{chapter/NewIntegerModel.tex}
+
+\chapter{Branch-and-cut algorithm and Separation problem}
+\input{chapter/BranchAndCut.tex}
+\input{chapter/SeparationProblem.tex}
+
+\chapter{Experimental Results}
+\input{chapter/ExperimentalResults.tex}
+
+SUMMARY OF WHAT TO DO NEXT
+Paper regarding p3 convexity and find instances to compare 
+
+See if Chinese paper was published: was published
+
+find code and see how it finally is. Retest with all the possible heuristic to find spread disease, make table and compare results
+
+Finally, get best and compare with literature: Have to discover instances in literature to compare with here.
+
+Try to extract paper in the progress and make presentation at the same time, since images for presentation should be used in dissertation.
+
+
+Learn about cplex configurations and start tuning it to better model and explain in presentation. Also remember concepts like lazy constraints against other possible constraints
+
+The House of Graphs: creates graph instances 
+
+
+After Vinicius meeting
+Make slides for next week
+Get all references in whatsapp and use them in the results
+Use paper on convexity p3 in the dissertation, add section on convexity and so on, since is the problem we can solve  with ease. 
+
+\chapter{Conclusion}
+\input{chapter/Conclusion.tex}
+
+\ppgccbibliography{bibfile.bib}
+
+
+
+\end{document}
